@@ -12,9 +12,9 @@ export const typeOrmModuleOptions: TypeOrmModuleAsyncOptions = {
     port: configService.get<number>('DB_PORT'),
     username: configService.get<string>('DB_USERNAME'),
     password: configService.get<string>('DB_PASSWORD'),
-    database: configService.get<string>('DB_DATABASENAME'),
+    database: configService.get<string>('DB_NAME'),
     synchronize: configService.get<boolean>('DB_SYNC'),
     autoLoadEntities: true,
-    logging: true,
+    // logging: true,
   }),
 };

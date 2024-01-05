@@ -1,3 +1,4 @@
+import { IsNotEmpty, IsNumber } from 'class-validator';
 import { Schedule } from 'src/show/entities/schedule.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
@@ -5,7 +6,6 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -18,11 +18,17 @@ export class Book {
   @Column({ unsigned: true })
   userId: number;
 
+  /**
+   * 공연회차 ID
+   * @example 1
+   */
+  @IsNumber()
+  @IsNotEmpty({ message: '공연회차 ID를 입력해 주세요.' })
   @Column({ unsigned: true })
   scheduleId: number;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;

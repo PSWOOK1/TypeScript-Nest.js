@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { configModuleValidationSchema } from 'src/configs/env-validation.config';
-import { typeOrmModuleOptions } from 'src/configs/database.config';
+import { configModuleValidationSchema } from './configs/env-validation.config';
+import { typeOrmModuleOptions } from './configs/database.config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { ShowModule } from './show/show.module';
@@ -23,6 +22,5 @@ import { BookModule } from './book/book.module';
     BookModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

@@ -24,7 +24,7 @@ export class Seat {
   totalSeats: number;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
